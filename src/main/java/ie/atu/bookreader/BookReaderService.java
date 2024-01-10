@@ -26,11 +26,6 @@ public class BookReaderService {
         return (List<BookReader>) bookReaderRepo.findAll();
     }
 
-    public void saveReader(BookReader bookReader) {
-        bookReader.setOrderedBooks(null);
-        this.bookReaderRepo.save(bookReader);
-    }
-
     public BookReader getBookReader(Long id) {
         BookReader bookReader = bookReaderRepo.findBookReaderById(id);
         return bookReader;
