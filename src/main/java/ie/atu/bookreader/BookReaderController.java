@@ -65,51 +65,11 @@ public class BookReaderController {
                 return ResponseEntity.badRequest().body("Email Already Used");
             }
         }
-        bookReaderService.saveReader(bookReader);
         bookReaderService.setLogged(1);
         bookReaderService.setUserID(bookReader.getId());
         return ResponseEntity.ok("Signed up successfully");
 
     }
-
-   /* @GetMapping("/getBook/{title}")
-    Book getBook(@PathVariable String title) {
-        Book book = new Book();
-        if (bookReaderService.getLogged() != 1) {
-            book.setBookTitle("Not logged in");
-        } else {
-            book = bookServiceClient.getBook(title);
-        }
-        return book;
-    }
-
-    @PostMapping("/addBook")
-    ResponseEntity<?> saveBook(@Valid @RequestBody Book book) {
-        if (bookReaderService.getLogged() != 1) {
-            return ResponseEntity.badRequest().body("Not logged in");
-        }
-        bookServiceClient.addBookToRepo(book);
-        return ResponseEntity.ok("Book Added");
-    }
-
-
-    @DeleteMapping ("/removeBook/{id}")
-    ResponseEntity<?> removeBook(@PathVariable Long id) {
-        if (bookReaderService.getLogged() != 1) {
-            return ResponseEntity.badRequest().body("Not logged in");
-        }
-        bookServiceClient.deleteBookFromRepo(id);
-        return ResponseEntity.ok("Book " + id + " Removed");
-    }
-
-    @PutMapping("/editBook/{title}")
-    ResponseEntity<?> editBook(@PathVariable String title, @RequestBody Book book) {
-        if (bookReaderService.getLogged() != 1) {
-            return ResponseEntity.badRequest().body("Not logged in");
-        }
-        bookServiceClient.editBookInRepo(title, book);
-        return ResponseEntity.ok("Book Edited");
-    }*/
 
     @PutMapping("/orderBook/{title}")
     public ResponseEntity<?> orderBook(@PathVariable String title) {

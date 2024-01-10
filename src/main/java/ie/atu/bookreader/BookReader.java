@@ -35,6 +35,4 @@ public class BookReader {
     @NotNull(message = "Age cannot be Empty")
     @Min(value = 0, message = "Age cannot be less than 0")
     private int age;
-
-    public int orderedBooks[] = new int[20];
 }

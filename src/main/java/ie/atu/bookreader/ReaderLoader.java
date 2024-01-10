@@ -16,7 +16,7 @@ public class ReaderLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        BookReader reader1 = new BookReader(1L, "User1", "user123", "UserReader@keeper.com", 18, null);
+        BookReader reader1 = new BookReader(1L, "User1", "user123", "UserReader@keeper.com", 18);
 
         bookReaderRepo.save(reader1);
     }
